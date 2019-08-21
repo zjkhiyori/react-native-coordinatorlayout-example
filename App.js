@@ -102,7 +102,7 @@ export default class App extends Component {
     })
   }
 
-  getCollapseHeight() {
+  getCollapseHeightOffset() {
     return this.listOffsetY.interpolate({
       inputRange: [-1, 0, COLLAPSE_HEIGHT, COLLAPSE_HEIGHT + 1],
       outputRange: [0, 0, - COLLAPSE_HEIGHT, - COLLAPSE_HEIGHT],
@@ -114,7 +114,7 @@ export default class App extends Component {
       <Animated.View
         style={{
           transform: [{
-            translateY: this.getCollapseHeight()
+            translateY: this.getCollapseHeightOffset()
           }],
           height: 200,
           width: WINDOW_WIDTH,
