@@ -118,7 +118,6 @@ export default class App extends Component {
           }],
           height: 200,
           width: WINDOW_WIDTH,
-          backgroundColor: 'yellow',
           position: 'absolute',
           top: 0,
         }}
@@ -133,7 +132,10 @@ export default class App extends Component {
 
   renderItem({ item, index }) {
     return (
-      <View style={{ height: 100 , padding: 15, justifyContent: 'center', backgroundColor: 'grey' }}>
+      <View
+        key={`${item}-${index}`}
+        style={{ height: 100 , padding: 15, justifyContent: 'center', backgroundColor: 'grey' }}
+      >
         <Text>{item}</Text>
       </View>
     )
@@ -185,6 +187,7 @@ export default class App extends Component {
       >
         {this.tabsContent.map((content, index) =>
           <Tab
+            key={`${index}`}
             heading={
               <TabHeading
                 style={{ backgroundColor: '#ffffff', width: WINDOW_WIDTH / 3 }}
@@ -200,7 +203,9 @@ export default class App extends Component {
                     key: index,
                     value: comp,
                   });
-                  comp.getNode().scrollToOffset({ offset: this.listFixedHeight, animated: false });
+                  setTimeout(() => {
+                    comp.getNode().scrollToOffset({ offset: this.listFixedHeight, animated: false });
+                  });
                 }
               }}
               data={content.data}
