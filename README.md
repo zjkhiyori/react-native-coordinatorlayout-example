@@ -1,7 +1,5 @@
 # react-native-coordinatorlayout-example
-The demo how to implement Android coordinatorLayout by React Native
-
-Fully cross-platform!
+The demo how to implement Android coordinatorLayout by React Native and fully cross-platform!
 
 ![Android example](https://github.com/zjkhiyori/react-native-coordinatorlayout-example/blob/master/example/android.gif)
 
